@@ -17,21 +17,24 @@ namespace FluentNHibernateDemo
 
             Id(x => x.Id); 
 
-            Map(x => x.FirstName);
-            Map(x => x.LastName);
+            Map(x => x.Name);
+          //Map(x => x.LastName);
             
             HasManyToMany(x => x.Products)
-                .LazyLoad()
                 .Table("CustomerProduct")
                 .ParentKeyColumn("CustomerId")
-                .ChildKeyColumn("ProductId");
-            
-            References(x => x.Category, "CategoryId");
+                .ChildKeyColumn("ProductId")
+                .Fetch.Join() // 
+                .Not.LazyLoad(); // Pegar todos os itens ........ Not.LazyLoad = EagerLoad() 
 
             // Reference
-
-
+            References(x => x.Category, "CategoryId")
+                .Fetch.Join()
+                .Not.LazyLoad();
+        
             // HasMany
+            HasMany(x => x.Contact);
+
             // Fetch Eager, Fetch Lazy
 
 
@@ -63,7 +66,22 @@ namespace FluentNHibernateDemo
             Id(x => x.Id);
 
             Map(x => x.Name);
+            Map(x => x.Value, "[Value]"); // value eh palavra reservada
+
+        }
+    }
+
+    class ContactMap : ClassMap<Contact>
+    {
+        public ContactMap()
+        {
+            Table("Contact");
+
+            Id(x => x.Id);
+
+            Map(x => x.Name);
             Map(x => x.Value, "[Value]");
+            Map(x => x.Type);
 
         }
     }

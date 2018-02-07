@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentNHibernateDemo", "FluentNHibernateDemo\FluentNHibernateDemo.csproj", "{866AA9D5-8FBE-4A32-96CF-EDD6732ED2DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentNhiberteDemoTest", "FluentNhiberteDemoTest\FluentNhiberteDemoTest.csproj", "{94096A38-79EA-4B66-B8E1-643105CA55C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{866AA9D5-8FBE-4A32-96CF-EDD6732ED2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{866AA9D5-8FBE-4A32-96CF-EDD6732ED2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{866AA9D5-8FBE-4A32-96CF-EDD6732ED2DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94096A38-79EA-4B66-B8E1-643105CA55C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94096A38-79EA-4B66-B8E1-643105CA55C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94096A38-79EA-4B66-B8E1-643105CA55C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94096A38-79EA-4B66-B8E1-643105CA55C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,4 @@
-﻿
-using FluentNHibernate.Cfg;
+﻿using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
@@ -33,9 +32,11 @@ namespace FluentNHibernateDemo
              .ShowSql())
 
          .Mappings(m => m.FluentMappings
+         
          .AddFromAssemblyOf<Program>())
          .ExposeConfiguration(cfg => new SchemaExport(cfg)
          .Create(true, true))
+         
          .BuildSessionFactory();
         }
 

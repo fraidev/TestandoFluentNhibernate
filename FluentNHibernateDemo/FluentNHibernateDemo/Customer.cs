@@ -1,4 +1,5 @@
-﻿using FluentNHibernate.Mapping;
+﻿
+using FluentNHibernate.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +9,16 @@ using System.Threading.Tasks;
 //Classe Customer
 namespace FluentNHibernateDemo
 {
-    class Customer
+    public class Customer
     {
         public virtual int Id { get; set; }
-        public virtual string FirstName { get; set; }
-        public virtual string LastName { get; set; }
+        public virtual string Name { get; set; }
 
-        public virtual IList<Product> Products { get; set; }
-        
-        public virtual Category Category { get; set; }
+        public virtual IList<Product> Products { get; set; } //Tabela de Produtos
+
+        public virtual IList<Contact> Contact { get; set; } //Tabela de Contatos
+
+        public virtual Category Category { get; set; } // Classe Categoria
     }
 
     public class Category

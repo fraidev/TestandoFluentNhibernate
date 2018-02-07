@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace FluentNHibernateDemo
 {
-    class Contact
+    public class Contact
     {
-        // Id
+        public virtual int Id { get; set; }
+        public virtual string Name { get; set; }
+        public virtual decimal Value { get; set; }
+        public virtual string Type { get; set; }
         // Name
         // Valor
-        // Tipo
+        // Type
     }
 }

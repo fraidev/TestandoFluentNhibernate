@@ -17,20 +17,61 @@ namespace FluentNHibernateDemo
 
                 using (var transaction = session.BeginTransaction())
                 {
+                    var tabuleiro = new Product
+                    {
+                        Name = "Tabuleiro",
+                        Value = 300
+                    };
+                    session.Save(tabuleiro);
+
+                    var tapete = new Product
+                    {
+                        Name = "Tapete",
+                        Value = 500
+                    };
+                    session.Save(tapete);
+
+
+                    var vip = new Category
+                    {
+                        Name = "VIP"
+                    };
+                    session.Save(vip);
+
+                    var NotVip = new Category
+                    {
+                        Name = "Not VIP"
+                    };
+                    session.Save(NotVip);
+
                     var customer = new Customer
                     {
-                        FirstName = "Allan",
-                        LastName = "Bomer"
+                        Name = "Allan",
+                        Category = vip,
+                        Products = new[] {
+                            tabuleiro,
+                            tapete
+                        }
                     };
-
-                    session.Save(customer);
-                    transaction.Commit();
-                    Console.WriteLine("Customer Created: " + customer.FirstName + "\t" +
-                       customer.LastName);
                                         
-                    var c= session.Get<Customer>(1);                   
+                    session.Save(customer);
 
-                    
+                    transaction.Commit();
+                    Console.WriteLine("Customer Created: " + customer.Name + "\t");
+
+                    session.Clear();
+
+                    var c= session.Get<Customer>(1);
+
+
+                    Console.WriteLine("Category: " + c.Category.Name);
+
+
+                    foreach(var p in c.Products)
+                    {
+                        Console.WriteLine("Product: " + p.Name + " - " + p.Value);
+                    }
+
                 }
 
                 Console.ReadKey();
