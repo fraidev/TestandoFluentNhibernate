@@ -11,8 +11,7 @@ namespace FluentNHibernateDemo
     {
         public virtual int Id { get; set; }
         public virtual string Name { get; set; }
-        public virtual decimal Value { get; set; }
-        public virtual string Type { get; set; }
+        public virtual decimal Number { get; set; }
         // Name
         // Valor
         // Type

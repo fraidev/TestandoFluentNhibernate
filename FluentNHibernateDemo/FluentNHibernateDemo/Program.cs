@@ -24,6 +24,13 @@ namespace FluentNHibernateDemo
                     };
                     session.Save(tabuleiro);
 
+                    var fulano = new Contact
+                    {
+                        Name = "fulado",
+                        Number = 900
+                    };
+                    session.Save(fulano);
+
                     var tapete = new Product
                     {
                         Name = "Tapete",
@@ -51,8 +58,12 @@ namespace FluentNHibernateDemo
                         Products = new[] {
                             tabuleiro,
                             tapete
-                        }
+                        },
+                        Contacts = new[] {
+                            fulano,
+                    }
                     };
+
                                         
                     session.Save(customer);
 

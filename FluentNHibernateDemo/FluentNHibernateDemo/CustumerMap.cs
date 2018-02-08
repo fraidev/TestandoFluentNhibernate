@@ -33,7 +33,8 @@ namespace FluentNHibernateDemo
                 .Not.LazyLoad();
         
             // HasMany
-            HasMany(x => x.Contact);
+            HasMany(x => x.Contacts)
+                .Table("ContactrProduct");
 
             // Fetch Eager, Fetch Lazy
 
@@ -80,8 +81,7 @@ namespace FluentNHibernateDemo
             Id(x => x.Id);
 
             Map(x => x.Name);
-            Map(x => x.Value, "[Value]");
-            Map(x => x.Type);
+            Map(x => x.Number);
 
         }
     }

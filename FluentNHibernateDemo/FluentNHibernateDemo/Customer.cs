@@ -16,7 +16,7 @@ namespace FluentNHibernateDemo
 
         public virtual IList<Product> Products { get; set; } //Tabela de Produtos
 
-        public virtual IList<Contact> Contact { get; set; } //Tabela de Contatos
+        public virtual IList<Contact> Contacts { get; set; } //Tabela de Contatos
 
         public virtual Category Category { get; set; } // Classe Categoria
     }
